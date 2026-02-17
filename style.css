@@ -1,0 +1,291 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== BODY ===== */
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    overflow-x: hidden;
+    background: linear-gradient(
+        135deg,
+        hsl(222, 18%, 44%),
+        #5e5e8e,
+        #fac0a7,
+        #73439f
+    );
+    background-size: 300% 300%;
+    animation: bgMove 18s ease infinite;
+}
+
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+
+/* ===== CANVAS BACKGROUND ===== */
+#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #00f5a0;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.hero span {
+    background: linear-gradient(90deg, #00f5a0, #00d9f5);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero h2 {
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+/* ===== BUTTONS ===== */
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.glow {
+    background: linear-gradient(90deg, #00f5a0, #00d9f5);
+    color: black;
+    box-shadow: 0 0 20px #00d9f5;
+}
+
+.glow:hover {
+    transform: scale(1.1);
+}
+
+.outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.outline:hover {
+    background: linear-gradient(90deg, #00f5a0, #00d9f5);
+    color: black;
+    border: none;
+}
+
+/* Resume Icon */
+.resume-btn i {
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.resume-btn:hover i {
+    transform: translateY(-3px);
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 40px;
+}
+
+/* ===== Premium Section Headings ===== */
+section h2 {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 60px;
+    display: inline-block;
+    position: relative;
+    background: linear-gradient(90deg, #00f5a0, #00d9f5);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientShift 10s ease infinite;
+}
+
+/* Subtle underline accent */
+section h2::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    left: 20%;
+    bottom: -12px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #00f5a0, #00d9f5);
+    opacity: 0.6;
+}
+
+/* Very soft glow */
+section h2:hover {
+    text-shadow: 0 0 10px rgba(0,217,245,0.4);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+@keyframes shine {
+    0% { left: -75%; }
+    100% { left: 130%; }
+}
+
+
+/* ===== SKILLS ===== */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+}
+
+.skill {
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.4s ease;
+}
+
+.skill:hover {
+    background: linear-gradient(90deg, #00f5a0, #00d9f5);
+    color: black;
+    transform: translateY(-10px);
+}
+
+/* ===== PROJECTS ===== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.project {
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.4s ease;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #00f5a0, #00d9f5);
+    color: black;
+}
+
+/* ===== CONTACT ===== */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px 40px;
+    border-radius: 20px;
+    min-width: 250px;
+    transition: 0.4s ease;
+}
+
+.contact-box:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(90deg, #00f5a0, #00d9f5);
+    color: black;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    margin-top: 50px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
